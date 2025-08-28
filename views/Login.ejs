@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+      rel="stylesheet"
+    />
+    <script src="Interior.js"></script>
+    <link rel="stylesheet" href="Interior.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Castle Designers.</title>
+    <link rel="icon" href="new2.png" type="image" />
+    <script>
+	function c(){
+        if (confirm("Leaving so soon?")) {
+          window.close();
+          return 0;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="loginbutton.html" method="post">
+<hr />
+      <h2><a href="/Interior.html">|CA𝕊TLΣ DE𝕊IGNΣR𝕊|</a><br /></h2>
+      <h4>------BE$T IN TOWN------</h4>
+      <div class="main">
+        <h1>Designing Dreams...</h1>
+        <p>Luxury in each detail.</p>
+      </div>
+<ul>
+   <li><a href="#" onclick="myfunction('http://localhost:3000/YourChoices.html')">YOUR CHOICES</a></li>
+    <li><a>LIVING ROOM</a>
+	<ul>
+	<li><a href="#">READYMADE DESIGNS</a></li>
+	<li><a href="#" onclick="myfunction('http://localhost:3000/LivingRoom.html')">CUSTOMISED DESIGNS</a></li>
+	</ul>
+	</li>
+ <li id="kit"><a href="/loginbutton.html">KITCHEN</a>
+	<ul>
+	<li><a href="#">READYMADE DESIGNS</a></li>
+	<li><a href="#" onclick="myfunction('http://localhost:3000/KitchenRoom.html')">CUSTOMISED DESIGNS</a></li>
+	</ul>
+	</li>
+<li id="bed"><a href="/loginbutton.html">BEDROOM</a>
+	<ul>
+	<li><a href="#">READYMADE DESIGNS</a></li>
+	<li><a href="#" onclick="myfunction('http://localhost:3000/BedRoom.html')">CUSTOMISED DESIGNS</a></li>
+	</ul>
+	</li>
+<li id="dine"><a href="/loginbutton.html">DINING</a></li>
+<li id="verandah"><a href="/loginbutton.html">VERANDAH</a></li>
+<li onclick="contactus()"><a href="/contactus.html">CONTACT US</a></li>
+<li><a>YOUR ACCOUNT</a>
+<ul>
+	<li><a>Email ID:<%=Email_ID%></a></li>
+	<li><a>Mobile:<%=Phone_Number%></a></li>
+   <li><a href="/">Logout</a></li>
+	</ul>
+</li>
+ </ul>
+<h3 id="Welcome_tag"></h3>
+     <button value="info" id="btn3" onclick="aboutus()"><a href="/About.html">About Us</a></button>
+    </form>
+<form action="http://localhost:3000/LivingRoom.html" id="this_form" method="post">
+<input type="hidden" name="email_id" id="email_id" value="<%-Email_ID%>">
+<input type="hidden" name="name" id="name" value="<%-Username%>">
+</form>
+<script>
+if("<%-fromchoices%>"=="True" && "<%-alreadypresent%>"==""){
+alert("Your choices for the <%-room_type%> have been successfully registered.");
+}
+else if("<%-fromchoices%>"=="No"){
+}
+else if("<%-alreadypresent%>"!=""){
+alert("Your choices <%-alreadypresent%> have already been registered for the <%-room_type%>. Only the new choices will be registered again.");
+}
+else{
+alert("Welcome "+"<%-Username%>");}
+document.getElementById("Welcome_tag").innerHTML="Welcome "+"<%-Username%>";
+function myfunction(link){
+document.getElementById("this_form").action=link;
+document.getElementById("this_form").submit();
+}
+</script>
+  </body>
+</html>
